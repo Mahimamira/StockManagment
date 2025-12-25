@@ -76,7 +76,9 @@ try {
 // ============================================
 // 📌 HEALTH CHECK
 // ============================================
-
+app.get("/", (req, res) => {
+  res.send("api is running");
+});
 app.get("/api/health", (req, res) => {
   res.json({
     status: "✅ Server is running",
