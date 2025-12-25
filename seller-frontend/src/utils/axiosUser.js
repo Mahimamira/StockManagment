@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const axiosUser = axios.create({
-  baseURL: 'http://localhost:5000/api/user',
+  baseURL: 'https://api-stock-wj40.onrender.com/api/user',
   headers: {
     'Content-Type': 'application/json',
   },

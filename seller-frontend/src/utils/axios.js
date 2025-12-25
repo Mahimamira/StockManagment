@@ -3,7 +3,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://localhost:5000/api/seller",
+  baseURL: "https://api-stock-wj40.onrender.com/api/seller",
   headers: {
     "Content-Type": "application/json",
   },
