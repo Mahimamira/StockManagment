@@ -29,7 +29,7 @@ import UserHome from "./pages/user/Home";
 import ProtectedUserRoute from "./components/ProtectedUserRoute";
 import Cart from "./pages/user/Cart";
 import UserOrders from "./pages/user/UserOrders";
-import UserProfile from "./pages/user/UserProfile"; // ✅ ADD THIS
+//import UserProfile from "./pages/user/UserProfile"; // ✅ ADD THIS
 
 import { CartProvider } from "./context/CartContext";
 
