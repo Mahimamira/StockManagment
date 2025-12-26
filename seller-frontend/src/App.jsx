@@ -5,6 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import MainHome from "./pages/MainHome";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -28,13 +29,13 @@ import UserHome from "./pages/user/Home";
 import ProtectedUserRoute from "./components/ProtectedUserRoute";
 import Cart from "./pages/user/Cart";
 import UserOrders from "./pages/user/UserOrders";
+import UserProfile from "./pages/user/UserProfile"; // ✅ ADD THIS
 
 import { CartProvider } from "./context/CartContext";
 
 function AppWrapper() {
   const location = useLocation();
 
-  // ✅ FIXED: Updated routes list
   const hideSidebarRoutes = [
     "/",
     "/login",
@@ -47,6 +48,7 @@ function AppWrapper() {
     "/user/home",
     "/user/cart",
     "/user/orders",
+    "/user/profile", // ✅ ADD THIS
   ];
 
   const showSidebar =
@@ -58,14 +60,14 @@ function AppWrapper() {
       {showSidebar && <Sidebar />}
       <div className={showSidebar ? "ml-64 w-full" : "w-full"}>
         <Routes>
-          {/* ✅ Default redirect */}
-          <Route path="/" element={<Login />} />
+          {/* Default */}
+          <Route path="/" element={<MainHome/>} />
 
           {/* Seller Auth */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
 
-          {/* ✅ Seller Protected Routes */}
+          {/* Seller Protected Routes */}
           <Route
             path="/seller/dashboard"
             element={
@@ -114,6 +116,8 @@ function AppWrapper() {
           {/* User Auth */}
           <Route path="/user/login" element={<UserLogin />} />
           <Route path="/user/register" element={<UserRegister />} />
+          
+          {/* User Protected Routes */}
           <Route
             path="/user/home"
             element={
@@ -135,6 +139,15 @@ function AppWrapper() {
             element={
               <ProtectedUserRoute>
                 <UserOrders />
+              </ProtectedUserRoute>
+            }
+          />
+          {/* ✅ ADD THIS - User Profile Route */}
+          <Route
+            path="/user/profile"
+            element={
+              <ProtectedUserRoute>
+                <UserProfile />
               </ProtectedUserRoute>
             }
           />
