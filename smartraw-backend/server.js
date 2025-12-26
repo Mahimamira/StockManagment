@@ -72,6 +72,15 @@ try {
 } catch (err) {
   console.error("❌ Error loading order routes:", err.message);
 }
+// Admin routes
+try {
+  const adminRoutes = require("./routes/adminRoutes");
+  app.use("/api/admin", adminRoutes);
+  console.log("✅ /api/admin routes loaded");
+} catch (err) {
+  console.error("❌ Error loading admin routes:", err.message);
+}
+
 
 // ============================================
 // 📌 HEALTH CHECK
