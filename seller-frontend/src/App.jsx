@@ -48,7 +48,7 @@ function AppWrapper() {
     "/user/home",
     "/user/cart",
     "/user/orders",
-    "/user/profile", // ✅ ADD THIS
+   // "/user/profile", 
   ];
 
   const showSidebar =
@@ -142,15 +142,7 @@ function AppWrapper() {
               </ProtectedUserRoute>
             }
           />
-          {/* ✅ ADD THIS - User Profile Route */}
-          <Route
-            path="/user/profile"
-            element={
-              <ProtectedUserRoute>
-                <UserProfile />
-              </ProtectedUserRoute>
-            }
-          />
+       
         </Routes>
       </div>
     </div>
